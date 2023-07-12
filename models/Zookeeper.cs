@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Model.models
+﻿namespace Model.models;
+/// <summary>
+/// Entity which represents worker which takes care of animals
+/// </summary>
+public class Zookeeper
 {
-	public class Zookeeper
-	{
-		public Zookeeper(string firstName)
-		{
-			FirstName = firstName;
-			Animals = new List<Animal>();
-		}
+    public Zookeeper(string firstName)
+    {
+        FirstName = firstName;
+    }
 
-		public int Id { get; set; }
-		[Required]
-		public string FirstName { get; set; }
-		public List<Animal>? Animals { get; set; }
+    public int Id { get; set; }
+    public string FirstName { get; set; }
 
-	}
+    public List<Animal> Animals { get; set; } = new();
+
 }

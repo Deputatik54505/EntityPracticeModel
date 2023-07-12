@@ -1,10 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Model.models;
-
-namespace Model.models;
-
+﻿namespace Model.models;
+/// <summary>
+/// Entity which represents cell with animals
+/// </summary>
 public class Cell
 {
-	public int Id { get; set; }
-	[Required] public List<Animal> Animals { get; set; } = new();
+    public Cell(string name)
+    {
+        Name = name;
+    }
+
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public List<Animal>? Animals { get; set; } = new();
 }
